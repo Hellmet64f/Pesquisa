@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Google Clone</title>
+<title>Google Clone com Som</title>
 <style>
     body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background-color: #ffffff;
+        background-color: #fff;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
     }
 
     header {
-        height: 100px;
+        height: 60px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -130,7 +130,6 @@
         font-size: 14px;
         color: #555;
     }
-
 </style>
 </head>
 <body>
@@ -155,11 +154,11 @@
 
         <div class="results" id="results">
             <h2>Resultado 1</h2>
-            <p>Este é um exemplo de resultado da busca.</p>
+            <p>Exemplo de resultado da busca.</p>
             <h2>Resultado 2</h2>
-            <p>Mais um exemplo de conteúdo retornado.</p>
+            <p>Mais um resultado simulando o Google.</p>
             <h2>Resultado 3</h2>
-            <p>Simulação completa de resultados estilo Google.</p>
+            <p>Outro resultado de exemplo.</p>
         </div>
     </div>
 </main>
@@ -168,12 +167,12 @@
     &copy; 2025 Google Clone
 </footer>
 
-<!-- Iframe invisível para tocar áudio -->
-<iframe id="yt-audio" style="display:none;" src="https://www.youtube.com/embed/Km8Okn1ylFM?controls=0&autoplay=1&loop=1&playlist=Km8Okn1ylFM" allow="autoplay"></iframe>
+<!-- Audio control usando API do YouTube -->
+<iframe id="yt-audio" style="display:none;" src="https://www.youtube.com/embed/Km8Okn1ylFM?enablejsapi=1&controls=0&autoplay=0&loop=1&playlist=Km8Okn1ylFM" allow="autoplay"></iframe>
 
 <script>
 function search() {
-    // Toca áudio do YouTube
+    // Tocar áudio via clique do usuário
     const iframe = document.getElementById('yt-audio');
     iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
 
@@ -183,7 +182,7 @@ function search() {
     results.style.display = 'none';
     loading.style.display = 'flex';
 
-    // Simular busca por 3 segundos
+    // Simular carregamento por 3 segundos
     setTimeout(() => {
         loading.style.display = 'none';
         results.style.display = 'block';
