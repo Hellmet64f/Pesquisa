@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Google Clone</title>
+<title>Google Clone com Som</title>
 <style>
     body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background-color: #ffffff;
+        background-color: #fff;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
     }
 
     header {
-        height: 100px;
+        height: 60px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -112,6 +112,86 @@
     }
 
     .results h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #1a0dab;
+    }
+
+    .results p {
+        font-size: 14px;
+        color: #545454;
+        margin-bottom: 15px;
+    }
+
+    footer {
+        background-color: #f2f2f2;
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+        color: #555;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <a href="#">Gmail</a>
+    <a href="#">Imagens</a>
+</header>
+
+<main>
+    <div class="logo">G</div>
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Pesquisar no Google Clone">
+            <button onclick="search()">Pesquisar</button>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Carregando...</p>
+        </div>
+
+        <div class="results" id="results">
+            <h2>Resultado 1</h2>
+            <p>Exemplo de resultado da busca.</p>
+            <h2>Resultado 2</h2>
+            <p>Mais um resultado simulando o Google.</p>
+            <h2>Resultado 3</h2>
+            <p>Outro resultado de exemplo.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    &copy; 2025 Google Clone
+</footer>
+
+<!-- Audio control usando API do YouTube -->
+<iframe id="yt-audio" style="display:none;" src="https://www.youtube.com/embed/Km8Okn1ylFM?enablejsapi=1&controls=0&autoplay=0&loop=1&playlist=Km8Okn1ylFM" allow="autoplay"></iframe>
+
+<script>
+function search() {
+    // Tocar áudio via clique do usuário
+    const iframe = document.getElementById('yt-audio');
+    iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+
+    // Mostrar GUI de carregamento
+    const loading = document.getElementById('loading');
+    const results = document.getElementById('results');
+    results.style.display = 'none';
+    loading.style.display = 'flex';
+
+    // Simular carregamento por 3 segundos
+    setTimeout(() => {
+        loading.style.display = 'none';
+        results.style.display = 'block';
+    }, 3000);
+}
+</script>
+
+</body>
+</html>    .results h2 {
         font-size: 20px;
         margin-bottom: 10px;
         color: #1a0dab;
